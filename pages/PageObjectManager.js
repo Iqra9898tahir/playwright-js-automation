@@ -1,9 +1,9 @@
 const { LoginPage } = require('./LoginPage')
 const { DashboardPage } = require('./DashboardPage')
-const { CheckOutPage } = require('./CheckOutPage')
+const { CheckoutPage } = require('./CheckoutPage')
 const { MyOrdersPage } = require('./MyOrdersPage')
 
-class POManager {
+class PageObjectManager {
 
     constructor(page) {
         this.page = page
@@ -11,7 +11,7 @@ class POManager {
         // Page object instances (camelCase, consistent)
         this.loginPage = new LoginPage(this.page)
         this.dashboardPage = new DashboardPage(this.page)
-        this.checkOutPage = new CheckOutPage(this.page)
+        this.checkOutPage = new CheckoutPage(this.page)
         this.myOrdersPage = new MyOrdersPage(this.page)
     }
 
@@ -32,4 +32,4 @@ class POManager {
     }
 }
 
-module.exports = { POManager }
+module.exports = { PageObjectManager }

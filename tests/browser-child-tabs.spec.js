@@ -36,7 +36,8 @@ test.only("child window", async ({ browser }) => {
     docLink.click(),
   ]);
 
-  await childPage.waitForLoadState();
-  await expect(childPage.locator('.red')).toContainText('Please email us');
-  console.log(text);
+const text = await childPage.locator('.red').textContent();
+console.log(text);
+await expect(childPage.locator('.red')).toContainText('Please email us');
+
 });

@@ -3,13 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "Regression" : "npx playwright test tests/login-page.spec.js",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.57.0",
-    "@types/node": "^25.0.3"
+    "@types/node": "^25.0.3",
+    "allure-playwright": "^3.4.5"
   }
 }

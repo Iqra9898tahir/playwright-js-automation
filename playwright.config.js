@@ -6,7 +6,7 @@ export default defineConfig({
   expect: {
     timeout: 50000,
   },
-  reporter: 'html',
+  reporter: [['line'], ['allure-playwright']],
   use: {
     browserName: 'chromium',
     headless: false,   // see browser UI
