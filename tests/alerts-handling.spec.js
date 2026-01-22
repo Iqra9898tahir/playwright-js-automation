@@ -9,8 +9,8 @@ test("alerts, hover and iframe interaction" ,async({page})=>{
     const framePages = page.frameLocator("#courses-iframe");
     await framePages.locator('li [href="lifetime-access"]:visible').click();
      const checkSubscribers = await framePages.locator('.text h2').textContent();
-     console.log(checkSubscribers.split(" ")[1]);
+     const subscriberCount = checkSubscribers.split(" ")[1];
      expect(subscriberCount).toBeTruthy();
      console.log("Subscriber Count:", subscriberCount);
 
-})
+    })

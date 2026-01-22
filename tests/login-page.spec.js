@@ -1,12 +1,12 @@
 import { test, expect } from "@playwright/test"
-const { POManager } = require('../pageObjects/POManager')
-const dataSet = JSON.parse(JSON.stringify(require("../utils/orderTestData.json")))
+const { PageObjectManager } = require('../pages/PageObjectManager')
+const dataSet = JSON.parse(JSON.stringify(require("../utils/order-test-data.json")))
 
 for (const data of dataSet)
 {
 test(`Placing order for ${data.productName} by ${data.username}`, async ({ page }) => {
     
-   const poManager = new POManager(page);    
+   const poManager = new PageObjectManager(page);    
     
     // Step 2: Initialize login page and navigate to it
     const loginPage = poManager.getLoginPage();
