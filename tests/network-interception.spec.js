@@ -1,5 +1,6 @@
 import { test, expect, request } from "@playwright/test";
-import { json } from "node:stream/consumers";
+
+
 
 const apiPayload = {
   userEmail: "iqra@gmail.com",
@@ -10,7 +11,7 @@ const orderPayLoad = {
   orders: [{ country: "India", productOrderedId: "6960eae1c941646b7a8b3ed3" }]
 };
 
-const { apiUtils } = require("./utils/apiUtils");
+const { apiUtils } = require("../utils/apiUtils");
 
 let response;
 const fakePayload = {data:[],message:"No Orders"}
@@ -48,9 +49,8 @@ test.only("Positive case: Valid credentials", async ({ page }) => {
     }
   )
 
-  // If token is correct, user is already logged in
   await page.locator('button[routerlink*="myorders"]').click();
-  await page.waitForResponse("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/*")
+  await page.waitForResponse(res => res.url().includes("/api/ecom/order/get-orders-for-customer"));
   console.log(await page.locator(".mt-4").textContent());
 });
 

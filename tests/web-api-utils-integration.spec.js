@@ -15,7 +15,7 @@ const orderPayLoad = {
 
 // Importing the CLASS (blueprint)
 // NOTE: This does NOT create an object
-const { apiUtils } = require("./utils/apiUtils");
+const { apiUtils } = require("../utils/apiUtils");
 
 // This variable will store API results (token + orderID)
 // We declare it outside so BOTH beforeAll and test can use it
@@ -99,7 +99,7 @@ test.only("Positive case: Valid credentials", async ({ page }) => {
   }
 
   const viewOrderDetails = await page.locator(".col-text").first().textContent();
-  await page.pause();
+
 
   // FINAL ASSERTION:
   // API-created order should match UI order

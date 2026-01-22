@@ -1,4 +1,4 @@
-class CheckOutPage {
+class CheckoutPage {
 
     constructor(page) {
 
@@ -32,4 +32,4 @@ class CheckOutPage {
 
 }
 
-module.exports = { CheckOutPage }
+module.exports = { CheckoutPage }

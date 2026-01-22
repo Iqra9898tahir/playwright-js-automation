@@ -8,8 +8,8 @@ test.beforeAll(async ({browser})=>{
         await page.locator('#userPassword').fill("Abc@1234567")
         await page.locator('#login').click()
         await expect(page.getByRole('heading',{name: 'Automation'})).toBeVisible();
-        await context.storageState({path:'state.json'})
-        webContext= await browser.newContext({storageState:'state.json'})
+        await context.storageState({path:'auth-state.json'})
+        webContext= await browser.newContext({storageState:'auth-state.json'})
 })
 test.describe("This is my test without login",()=>{
     test.only("login with api",async()=>{
